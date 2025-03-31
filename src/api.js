@@ -12,3 +12,10 @@ export const fetcharticles = () => {
         return data.articles
       })
 }
+
+export const fetchArticleByID = (article_id) => {
+    return api.get(`/articles/${article_id}`)
+      .then(({data}) => {
+        return data
+      })
+}

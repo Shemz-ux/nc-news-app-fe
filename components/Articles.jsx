@@ -8,7 +8,7 @@ function Articles(){
     useEffect(() => {
         fetcharticles()
             .then((res) => {
-                setArticles(res); // Store articles in state
+                setArticles(res); 
             })
     }, []);
 
