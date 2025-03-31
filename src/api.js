@@ -1,0 +1,14 @@
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "https://nc-news-app-4pxn.onrender.com/api",
+  timeout: 1000,
+});
+
+
+export const fetcharticles = () => {
+    return api.get("/articles")
+      .then(({data}) => {
+        return data.articles
+      })
+}
