@@ -14,10 +14,6 @@ header {
   border-bottom: solid black;
 }
 
-/* header h1 {
-    text-decoration: none;
-} */
-
 .article_container {
   width: 100%; 
   display: flex;
@@ -50,6 +46,31 @@ header {
   width: 100%;
 }
 
+.read_article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inline {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.author {
+  font-size: 60%;
+  text-align: left;
+}
+
+.date {
+  font-size: 60%;
+  text-align: right;
+}
+
+.read_article p {
+  line-height: 1.6rem;
+}
 
 
 

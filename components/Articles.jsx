@@ -1,16 +1,15 @@
 import ArticleCard from "./ArticleCard";
-import { useState, useEffect } from "react";
 import { fetcharticles } from "../src/api";
+import useApiRequests from "../hooks/apiRequests";
 
 function Articles(){
-    const [articles, setArticles] = useState([]);
+    const {data: articles, loading, error } = useApiRequests(fetcharticles)
 
-    useEffect(() => {
-        fetcharticles()
-            .then((res) => {
-                setArticles(res); // Store articles in state
-            })
-    }, []);
+    if (loading) return <p>Loading stories...</p>
+
+    if (error) {
+        return <p>Something is not rightttt</p>
+    }
 
     return (<div className="article_container">
         <h2 className="subheader">Top stories</h2>
