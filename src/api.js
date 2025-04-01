@@ -20,6 +20,12 @@ export const fetchArticleByID = (article_id) => {
       })
 }
 
+export const updateArticleVotes = (article_id) => {
+  return api.patch(`/articles/${article_id}`, {inc_votes: 1})
+}
+
+
+
 export const fetchCommentsByID = (article_id) => {
   return api.get(`/articles/${article_id}/comments`)
       .then(({data}) => {

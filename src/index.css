@@ -86,6 +86,27 @@ header {
   border-radius: 0.5em;
 }
 
+.vote_comment{
+  border-bottom: solid black;
+  border-bottom-width: thin;
+}
+
+.vote_comment button{
+  width: 4.5rem;
+  height: 2.5rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+  border-radius: 0.5em;
+  margin-bottom: 1rem;
+}
+
+.vote_comment button:active {
+  background-color: rgba(31, 31, 31, 0.2);
+  box-shadow: 0 5px lightgray;
+  transform: translateY(1px);
+}
+
 
 
 
