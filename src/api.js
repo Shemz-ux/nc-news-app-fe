@@ -20,6 +20,14 @@ export const fetchArticleByID = (article_id) => {
       })
 }
 
+export const postCommentByID = (article_id, body, author) => {
+  return api.post(`/articles/${article_id}/comments`, {
+    article_id: article_id,
+    body: body,
+    author: author,
+  })
+}
+
 export const updateArticleVotes = (article_id) => {
   return api.patch(`/articles/${article_id}`, {inc_votes: 1})
 }

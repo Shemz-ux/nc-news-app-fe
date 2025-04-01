@@ -87,8 +87,10 @@ header {
 }
 
 .vote_comment{
-  border-bottom: solid black;
-  border-bottom-width: thin;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .vote_comment button{
@@ -107,6 +109,18 @@ header {
   transform: translateY(1px);
 }
 
+.vote_comment input {
+  flex: 1;
+  height: 1rem; 
+  padding: 0.8rem;
+  border: none;
+  background-color: #f1f1f1;
+  border-radius: 0.5em;
+  margin-bottom: 1rem;
+  max-width: 100%; 
+  overflow: hidden;
+  box-shadow: inset 0px 0px 5px 2.5px lightgray;
+}
 
 
 

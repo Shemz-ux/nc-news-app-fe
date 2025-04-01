@@ -1,15 +1,22 @@
 import { useParams } from "react-router-dom"
 import { fetchArticleByID } from "../src/api";
 import useApiRequests from "../hooks/apiRequests";
+import { useNavigate } from "react-router-dom";
 import formatDate  from "../hooks/formatDate";
 import CommentSection from "./CommentSection";
 import Vote from "./Vote";
 
 function ArticleItem(){
     const {article_id} = useParams()
+    // const [clicked, setClicked] = useState(false)
 
     const {data: article, loading, error } = useApiRequests(fetchArticleByID, article_id)
-    // const [votes, setVotes] = useState()
+
+    let navigate = useNavigate();
+
+    const handleClick = (article_id) => {
+        navigate(`/articles/${article_id}/comments`)
+    };
 
     if (loading) return <p>Loading article...</p>
 
@@ -19,12 +26,6 @@ function ArticleItem(){
     
     const {title, article_img_url, author, body, created_at, votes} = article
 
-    // const handleLike = () => {
-    //     setLikesCount((currentLikesCount) => currentLikesCount + 1);
-    //     postLike();
-    //   };
-
-
     return (
         <div className="read_article">
             <h2>{title}</h2>
@@ -33,10 +34,13 @@ function ArticleItem(){
                 <p className="author">Written by {author}</p>
                 <p className="date">{formatDate(created_at)}</p>
             </div>
+            <p>{body}</p>
             <div className="vote_comment">
                     <Vote article_id={article_id} vote={votes}/>
+                    <form>
+                        <input type="text" id="comment" placeholder="Leave a comment" onClick={()=>handleClick(article_id)}/>
+                    </form>
             </div>
-            <p>{body}</p>
             <div className="comment_section">
                 <h3>Comments</h3>
                 <CommentSection article_id={article_id}/>
@@ -45,4 +49,4 @@ function ArticleItem(){
     )
 }
 
-export default ArticleItem
+export default ArticleItem;
