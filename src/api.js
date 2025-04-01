@@ -19,3 +19,10 @@ export const fetchArticleByID = (article_id) => {
         return data.article
       })
 }
+
+export const fetchCommentsByID = (article_id) => {
+  return api.get(`/articles/${article_id}/comments`)
+      .then(({data}) => {
+        return data.comments
+      })
+}
