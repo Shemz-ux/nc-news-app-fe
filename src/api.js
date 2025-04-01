@@ -16,6 +16,6 @@ export const fetcharticles = () => {
 export const fetchArticleByID = (article_id) => {
     return api.get(`/articles/${article_id}`)
       .then(({data}) => {
-        return data
+        return data.article
       })
 }
