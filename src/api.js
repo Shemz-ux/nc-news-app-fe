@@ -35,7 +35,11 @@ export const updateArticleVotes = (article_id, voted) => {
   return api.patch(`/articles/${article_id}`, {inc_votes: voted})
 }
 
-
+export const deleteComment = (comment_id) => {
+  return api.delete(`/comments/${comment_id}`).then(({data})=>{
+    return data.comment
+  })
+}
 
 export const fetchCommentsByID = (article_id) => {
   return api.get(`/articles/${article_id}/comments`)
