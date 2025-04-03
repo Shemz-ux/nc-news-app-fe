@@ -5,17 +5,19 @@ import { useNavigate } from "react-router-dom";
 import formatDate  from "../hooks/formatDate";
 import CommentSection from "./CommentSection";
 import Vote from "./Vote";
+import { useState} from "react";
+import Comment from "./Comment";
+import { Link } from "react-router-dom";
 
 function ArticleItem(){
     const {article_id} = useParams()
-    // const [clicked, setClicked] = useState(false)
+    const [clicked, setClicked] = useState(null)
 
     const {data: article, loading, error } = useApiRequests(fetchArticleByID, article_id)
 
-    let navigate = useNavigate();
 
-    const handleClick = (article_id) => {
-        navigate(`/articles/${article_id}/comments`)
+    const handleClick = () => {
+        setClicked(true)
     };
 
     if (loading) return <p>Loading article...</p>
@@ -26,7 +28,9 @@ function ArticleItem(){
     
     const {title, article_img_url, author, body, created_at, votes} = article
 
-    return (
+    return ( 
+        <>
+        
         <div className="read_article">
             <h2>{title}</h2>
             <img src={article_img_url} alt={title} />
@@ -41,11 +45,14 @@ function ArticleItem(){
                         <input type="text" id="comment" placeholder="Leave a comment" onClick={()=>handleClick(article_id)}/>
                     </form>
             </div>
+        </div>
+        {clicked ? <Comment/> : (
             <div className="comment_section">
                 <h3>Comments</h3>
                 <CommentSection article_id={article_id}/>
             </div>
-        </div>
+        )}
+        </>
     )
 }
 

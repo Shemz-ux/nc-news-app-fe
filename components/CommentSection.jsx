@@ -13,15 +13,13 @@ function CommentSection ({article_id}){
 
     return (
         <>
-            {comments.map(({comment_id, author, body, votes, created_at}) => (
+            {comments.map(({comment_id, author, body, created_at}) => (
             <div className="comment_card" key={comment_id}>
                 <div className="inline">
                     <h4 className="author">{author}</h4>
                     <p className="date">{formatDate(created_at)}</p>
                 </div>
                 <p>{body}</p>
-                {/* <button><i className="fa fa-thumbs-up"></i> {votes}</button>  */}
-                <p>votes: {votes}</p>
             </div>
             ))}
         

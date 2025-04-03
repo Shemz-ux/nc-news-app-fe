@@ -94,7 +94,7 @@ header {
 }
 
 .vote_comment button{
-  width: 4.5rem;
+  width: 3.5rem;
   height: 2.5rem;
   border: none;
   cursor: pointer;
@@ -120,6 +120,42 @@ header {
   max-width: 100%; 
   overflow: hidden;
   box-shadow: inset 0px 0px 5px 2.5px lightgray;
+}
+
+/* .buttons {
+  display: flex;
+  gap: 1rem; /* ✅ Adds spacing between buttons */
+ */
+
+.comment {
+  border-radius: 5px;
+  /* background-color: #f2f2f2; */
+  padding: 20px;
+}
+
+.comment input[type=text], textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.comment input[type=submit] {
+  width: 100%;
+  background-color: lightgray;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.comment input[type=submit]:hover {
+  background-color: rgb(181, 181, 181);
 }
 
 

@@ -20,16 +20,19 @@ export const fetchArticleByID = (article_id) => {
       })
 }
 
-export const postCommentByID = (article_id, body, author) => {
+export const postCommentByID = ({article_id, body, username}) => {
   return api.post(`/articles/${article_id}/comments`, {
     article_id: article_id,
     body: body,
-    author: author,
+    username: username,
+  }).then(({data})=>{
+    console.log(data)
+    return data.comment
   })
 }
 
-export const updateArticleVotes = (article_id) => {
-  return api.patch(`/articles/${article_id}`, {inc_votes: 1})
+export const updateArticleVotes = (article_id, voted) => {
+  return api.patch(`/articles/${article_id}`, {inc_votes: voted})
 }
 
 
