@@ -1,15 +1,24 @@
 import { useParams } from "react-router-dom"
 import { fetchArticleByID } from "../src/api";
 import useApiRequests from "../hooks/apiRequests";
+import { useNavigate } from "react-router-dom";
 import formatDate  from "../hooks/formatDate";
 import CommentSection from "./CommentSection";
 import Vote from "./Vote";
+import { useState} from "react";
+import Comment from "./Comment";
+import { Link } from "react-router-dom";
 
 function ArticleItem(){
     const {article_id} = useParams()
+    const [clicked, setClicked] = useState(null)
 
     const {data: article, loading, error } = useApiRequests(fetchArticleByID, article_id)
-    // const [votes, setVotes] = useState()
+
+
+    const handleClick = () => {
+        setClicked(true)
+    };
 
     if (loading) return <p>Loading article...</p>
 
@@ -19,13 +28,9 @@ function ArticleItem(){
     
     const {title, article_img_url, author, body, created_at, votes} = article
 
-    // const handleLike = () => {
-    //     setLikesCount((currentLikesCount) => currentLikesCount + 1);
-    //     postLike();
-    //   };
-
-
-    return (
+    return ( 
+        <>
+        
         <div className="read_article">
             <h2>{title}</h2>
             <img src={article_img_url} alt={title} />
@@ -33,16 +38,22 @@ function ArticleItem(){
                 <p className="author">Written by {author}</p>
                 <p className="date">{formatDate(created_at)}</p>
             </div>
+            <p>{body}</p>
             <div className="vote_comment">
                     <Vote article_id={article_id} vote={votes}/>
+                    <form>
+                        <input type="text" id="comment" placeholder="Leave a comment" onClick={()=>handleClick(article_id)}/>
+                    </form>
             </div>
-            <p>{body}</p>
+        </div>
+        {clicked ? <Comment/> : (
             <div className="comment_section">
                 <h3>Comments</h3>
                 <CommentSection article_id={article_id}/>
             </div>
-        </div>
+        )}
+        </>
     )
 }
 
-export default ArticleItem
+export default ArticleItem;
