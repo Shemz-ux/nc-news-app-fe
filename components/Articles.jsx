@@ -11,7 +11,7 @@ function Articles(){
     if (loading) return <p>Loading stories...</p>
 
     if (error) {
-        return <p>Something is not rightttt</p>
+        return <p>Could not load articles, please try again!</p>
     }
    
     let topicHeader = query ? query.replace(query[0], query[0].toUpperCase()) : null;

@@ -5,7 +5,6 @@ const api = axios.create({
   timeout: 1000,
 });
 
-
 export const fetcharticles = (slug) => {
     let query = slug
 
@@ -22,7 +21,6 @@ export const fetcharticles = (slug) => {
       })
 }
 
-
 export const fetchArticleByID = (article_id) => {
     return api.get(`/articles/${article_id}`)
       .then(({data}) => {
@@ -36,7 +34,6 @@ export const fetchTopics = () => {
     return data.topics
   })
 }
-
 
 export const postCommentByID = ({article_id, body, username}) => {
   return api.post(`/articles/${article_id}/comments`, {

@@ -17,9 +17,8 @@ function Header(){
           <Link to="/articles" style={{ textDecoration: 'none', color: 'black' }}>
             <h1>NC News</h1>
           </Link>
-      
           <div className="topic_dropdown">
-            <button className="dropbtn">Topics</button>
+            <button className="dropbtn">Topics‣</button>
             <div className="dropdown-content">
             {topics.map(({ slug }) => (
                 <Link key={slug} to={`/articles?topic=${slug}`}>{slug}</Link>

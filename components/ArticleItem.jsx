@@ -23,7 +23,7 @@ function ArticleItem(){
     if (loading) return <p>Loading article...</p>
 
     if (error) {
-        return <p>Something is not rightttt</p>
+        return <p>Article could not be found.</p>
     }
     
     const {title, article_img_url, author, body, created_at, votes} = article

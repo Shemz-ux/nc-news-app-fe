@@ -21,7 +21,7 @@ function CommentSection({ article_id }) {
         }
 
         deleteComment(clickedCommentId).catch(()=>{
-            setDeleteMsg("Comments cannot be deleted twice!")
+            setDeleteMsg("A comment cannot be deleted twice!")
         })
 
         setDeleteMsg(null)
@@ -29,18 +29,20 @@ function CommentSection({ article_id }) {
         setEnteredUsername(""); 
     };
 
-    if (loading) return <p>Loading comments...</p>;
-    if (error) return <p>Something is not rightttt</p>;
+    if (loading) return <p>Loading comments section...</p>;
+
+    if (error) return <p>Could not load comments.</p>;
 
     return (
         <>
-            {comments.map(({ comment_id, author, body, created_at }) => (
+            {comments.map(({ comment_id, author, body, created_at, votes: comment_count }) => (
                 <div className="comment_card" key={comment_id}>
                     <div className="inline">
                         <h4 className="author">{author}</h4>
                         <p className="date">{formatDate(created_at)}</p>
                     </div>
                     <p>{body}</p>
+                    <p>Votes: {comment_count}</p>
                     <button onClick={() => handleClick(comment_id)}>Delete</button>
 
                     {clickedCommentId === comment_id && (

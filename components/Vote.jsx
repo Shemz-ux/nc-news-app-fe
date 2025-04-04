@@ -26,7 +26,7 @@ function Vote({article_id, vote}){
             <p>Votes: {currentVotes + vote }</p>
                 <button onClick={() => handleVote(1)} disabled={hasVoted === 1}>👍</button>
                 <button onClick={() => handleVote(-1)} disabled={hasVoted === -1}>👎</button>
-            <p>{error}</p>
+                <p style={{ color: 'red' }}>{error}</p>
         </>
     )
 }

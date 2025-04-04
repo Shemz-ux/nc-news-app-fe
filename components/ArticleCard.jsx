@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 function ArticleCard({articles}){
     let navigate = useNavigate();
 
-    const handleClick = (article_id) => {
+    const handleClick = (article_id) => { 
         navigate(`/articles/${article_id}`)
     };
 
