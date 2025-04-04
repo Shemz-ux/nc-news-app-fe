@@ -6,12 +6,22 @@ const api = axios.create({
 });
 
 
-export const fetcharticles = () => {
-    return api.get("/articles")
-      .then(({data}) => {
+export const fetcharticles = (slug) => {
+    let query = slug
+
+    if (query === ''){
+      query = undefined
+    }
+
+    return api.get("/articles", {
+      params: {
+        topic: query,
+    }
+    }).then(({data}) => {
         return data.articles
       })
 }
+
 
 export const fetchArticleByID = (article_id) => {
     return api.get(`/articles/${article_id}`)
@@ -19,6 +29,14 @@ export const fetchArticleByID = (article_id) => {
         return data.article
       })
 }
+
+export const fetchTopics = () => {
+  return api.get("/topics")
+  .then(({data}) => {
+    return data.topics
+  })
+}
+
 
 export const postCommentByID = ({article_id, body, username}) => {
   return api.post(`/articles/${article_id}/comments`, {
