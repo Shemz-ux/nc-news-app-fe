@@ -1,13 +1,11 @@
 import { useParams } from "react-router-dom"
 import { fetchArticleByID } from "../src/api";
 import useApiRequests from "../hooks/apiRequests";
-import { useNavigate } from "react-router-dom";
 import formatDate  from "../hooks/formatDate";
 import CommentSection from "./CommentSection";
 import Vote from "./Vote";
 import { useState} from "react";
 import Comment from "./Comment";
-import { Link } from "react-router-dom";
 
 function ArticleItem(){
     const {article_id} = useParams()
