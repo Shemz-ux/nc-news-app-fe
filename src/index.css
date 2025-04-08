@@ -103,12 +103,6 @@ header {
   justify-content: space-between;
 }
 
-/* .vote_comment {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-} */
 
 .author {
   font-size: 70%;

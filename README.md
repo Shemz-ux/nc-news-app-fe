@@ -1,90 +1,103 @@
-# 📰 SD NC News API
+# 📰 SD NC News – Frontend Application
+Live Site → https://sd-news-ap.netlify.app
 
-Front end NC news app
+## 📌 Project Overview
+SD NC News is a fully functional news web app built using React on the frontend, which interacts with a RESTful backend API (Node.js, Express, PostgreSQL). The app allows users to:
 
+- Browse all articles
 
-## Project Overview
+- Filter articles by topic
 
-This project is a backend service built with Node.js, Express, and PostgreSQL. It provides endpoints to retrieve, post, update, and delete news-related data such as articles, topics, users, and comments.
+- View individual articles in detail
 
-## Setup Instructions
+- Vote on articles (like/dislike)
 
-### 1️⃣ Clone the Repository
+- Read and post comments
 
-- clone the repo:
-``` git clone https://github.com/Shemz-ux/nc-news-app.git ```
+- Delete comments with authentication
 
-cd northcoders-news-be
+- Navigate through different topics using a dynamic dropdown
 
-### 2️⃣ Install Dependencies
+The project mimics the experience of a basic news site, offering features like voting systems, comment threads, and topic-based filtering — all powered by live data from a hosted backend API.
 
-- Ensure you have Node.js v16+ and PostgreSQL v14+ installed, then run:
+## 🚀 Live Demo
+Check out the live deployed version:
+👉 https://sd-news-ap.netlify.app
+
+(note it may take some time for the backend to retrieve data from the api on first bootup, give it some time!)
+
+## ⚙️ Project Setup (Local Dev)
+This repo is the frontend of the NC News project. To get everything running locally:
+
+## 1️⃣ Clone the Repository
+
+```git clone https://github.com/Shemz-ux/nc-news-app.git```
+```cd nc-news-app```
+
+## 2️⃣ Install Dependencies
+Make sure you have Node.js installed (v16+ recommended).
 
 ```npm install```
 
-### 3️⃣ Set Up Environment Variables
+## 🧪 Running the App Locally
+To start the frontend development server:
 
-#### Create two .env files in the project root:
+```npm run dev```
+The app will run locally (usually on http://localhost:5173) and connect to the live backend API (ensure CORS is allowed or use a .env if the backend is local).
 
- - ✅ .env.development
+## 🔗 Backend API
+This frontend communicates with a custom-built RESTful API. If you'd like to clone and run the backend server locally or explore its documentation, check it out here:
 
-```PGDATABASE=nc_news``` (no semi-colons)
+## 👉 NC News Backend GitHub Repo
 
-- ✅ .env.test
+API includes endpoints to:
 
-```PGDATABASE=nc_news_test``` (no semi-colons)
+- Fetch articles, comments, users, topics
 
-✅ Ensure these files are added to .gitignore to prevent exposing credentials.
+- Vote on articles
 
-Note: these files, will connect you to a specific data base [test/dev], based on what environment you are running in.
+- Post and delete comments
 
-## Database Setup & Seeding
+- Filter articles by topic
 
-### 4️⃣ Create the Databases
+## 🧰 Tech Stack
+- Frontend Framework: React (Vite)
 
-Run the following command to set up the development and test databases:
+- Routing: React Router DOM
 
-```npm run setup-dbs```
+- HTTP Requests: Axios
 
-### 5️⃣ Seed the Development Database
+- State Management: React hooks (useState, useEffect, useContext)
 
-```npm run seed-dev```
+- Styling: Pure CSS (custom styles)
 
-## Running Tests
+- Backend API: Node.js, Express, PostgreSQL
 
-- To verify functionality and error handling, run:
+## 🌟 Features You Can Explore
+- 🧭 Navigation bar with topic filtering dropdown
 
-```npm test```
+- 👍 Voting system with one-vote restriction
 
-- For specific test files:
+- 💬 Comment form with username validation before delete
 
-```npm run test-seed```
-```npm run app-test```
+- ⚡ Dynamic routing and query handling via React Router
 
-## Running the Server Locally
+- 🎯 Clean and responsive layout built with Flexbox
 
-### 6️⃣ Start the Server
+## 🧠 What I Learned
+In building this project, I aimed to gain hands-on experience with:
 
-- Run:
-```npm run start```
+- Connecting a frontend to a live REST API
 
-By default, it will run on port 9090, which will allow you to make various requests to the db using a client simulator like insomnia or postman
+- Managing application state and API calls efficiently
 
-## API Endpoints
+- React router and query param handling
 
-For a full list of available endpoints and their descriptions, visit:
+- Error handling and conditional rendering
 
-- GET /api
+- Creating a responsive and interactive UI with modular components
 
-Example: View ```endpoints.json```
+## ✅ Requirements
+Node.js v16+
 
-## Tech Stack
-
-- **Frontend**: React, CSS, JS
-- **Framework**" Axios
-
-## Minimum Requirements
-
-- Node.js: v16+
-
-- PostgreSQL: v14+
+(Optional) If running backend locally: PostgreSQL v14+#
