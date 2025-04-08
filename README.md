@@ -31,7 +31,7 @@ This repo is the frontend of the NC News project. To get everything running loca
 
 ## 1️⃣ Clone the Repository
 
-```git clone https://github.com/Shemz-ux/nc-news-app.git```
+```git clone https://github.com/Shemz-ux/nc-news-app-fe```
 ```cd nc-news-app```
 
 ## 2️⃣ Install Dependencies

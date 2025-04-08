@@ -33,6 +33,8 @@ function CommentSection({ article_id }) {
 
     if (error) return <p>Could not load comments.</p>;
 
+    console.log(comments)
+
     return (
         <>
             {comments.map(({ comment_id, author, body, created_at, votes: comment_count }) => (
