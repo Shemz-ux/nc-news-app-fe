@@ -1,3 +1,4 @@
+import formatDate from "../hooks/formatDate";
 import ArticleItem from "./ArticleItem";
 import { useNavigate } from "react-router";
 
@@ -10,11 +11,16 @@ function ArticleCard({articles}){
 
     return (
         <div className="card_container"> 
-            {articles.map(({ article_id, title, article_img_url, author }) => (
+            {articles.map(({ article_id, title, article_img_url, author, votes, comment_count, created_at}) => (
                 <div className="article_cards" key={article_id} id={article_id} onClick={() => handleClick(article_id)}>
                     <img src={article_img_url} alt={title} />
+                    <p>{formatDate(created_at)}</p>
                     <h3>{title}</h3>
-                    <p>By {author}</p>
+                    <p>Written by {author}</p>
+                    <div className="inline">
+                    <p>👍 {votes} votes</p>
+                    <p>💬 {comment_count} comments</p>
+                    </div>
                 </div>
             ))}
             </div>
