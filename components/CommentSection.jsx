@@ -1,5 +1,5 @@
 import useApiRequests from "../hooks/apiRequests";
-import formatDate from "../hooks/formatDate";
+import {formatDate, dateFormatter}from "../utils/formatDate";
 import { deleteComment, fetchCommentsByID } from "../src/api";
 import { useState } from "react";
 

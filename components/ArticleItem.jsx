@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import { fetchArticleByID, updateArticleVotes } from "../src/api";
 import useApiRequests from "../hooks/apiRequests";
-import formatDate  from "../hooks/formatDate";
+import {formatDate}  from "../utils/formatDate";
 import CommentSection from "./CommentSection";
 import { useState} from "react";
 import Comment from "./Comment";
