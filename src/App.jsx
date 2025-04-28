@@ -7,7 +7,7 @@ import ErrorPage from '../components/ErrorPage';
 
 function App() {
   return (
-    <>
+    <main>
       <Header/>
       <Routes>
         <Route path="/" element={<Articles/>} />
@@ -15,7 +15,7 @@ function App() {
         <Route path="/articles/:article_id/comments" element={<Comment/>} />
         <Route path="*" element={<ErrorPage/>} />
       </Routes>
-    </>
+    </main>
   )
 }
 

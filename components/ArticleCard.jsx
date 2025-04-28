@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { FaRegComment } from "react-icons/fa";
 import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
+import Vote from "./Vote";
 
 function ArticleCard({articles}){
     let navigate = useNavigate();
@@ -19,13 +20,11 @@ function ArticleCard({articles}){
                     <img src={article_img_url} className="card-img-top" alt={title} />
                     <div className="card-body py-3">
                         <h3 className="card-title" style={{fontWeight: "bold"}}>{title}</h3>
-                        <div className="mt-3 d-flex gap-3">
-                            <div className="d-inline-flex gap-1 align-items-center border rounded-pill p-2" >
-                                <AiOutlineLike size={20} />  {votes}
+                        <div className="mt-4 d-flex gap-3">
+                            <Vote article_id={article_id}/>
+                            <div className="d-inline-flex gap-1 align-items-center border rounded-pill p-2" style={{height: "35px"}}>
+                                <FaRegComment size={15}/> {comment_count}
                                 </div>
-                                <div className="d-inline-flex gap-1 align-items-center border rounded-pill p-2">
-                                    <FaRegComment size={18}/> {comment_count}
-                                    </div>
                             </div>
                         </div>
                     <div className="card-footer py-2" style={{background: "none"}}> {dateFormatter(new Date(created_at))} {' • '} {author}</div>

@@ -10,7 +10,7 @@ function Comment() {
         event.preventDefault();
         const { user, body } = event.target.elements;
         const newComment = {
-            username: user.value,
+            username: 'grumpy19',
             body: body.value,
         };
 
@@ -27,19 +27,14 @@ function Comment() {
     };
     
     return (
-        <>
-        <div className="comment">
-        <h3>Leave a comment</h3>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username:</label>
-            <input type="text" id="user" name="user" placeholder="Enter username..." required/>
-            <label htmlFor="comment">Comment:</label>
-            <textarea rows="4" id="body" cols="100"type="text" name="body" placeholder="Add a comment..." required/>
-            <input type="submit" value="Submit"/>
-        </form>
+        <div className="mt-2" style={{width: "60%"}}>
+            <form className="form-floating" onSubmit={handleSubmit}> 
+                <textarea className="form-control" name="body" placeholder="Leave a comment here" id="floatingTextarea2" style={{height: "100px"}}></textarea>
+                <label for="floatingTextarea2">Leave a comment</label>
+                </form>
+                <input className= "mt-3"type="submit" value="Post"/>
             <p>{submitComment}</p>
         </div>
-        </>
 )
 }
 
