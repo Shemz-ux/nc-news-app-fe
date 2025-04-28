@@ -15,7 +15,7 @@ function ArticleCard({articles}){
 
     return (
         <div className="card_container"> 
-            {articles.map(({ article_id, title, article_img_url, author, votes, comment_count, created_at}) => (
+            {articles.map(({ article_id, title, article_img_url, author, comment_count, created_at}) => (
                 <div key={article_id} className="article_cards card my-3" style={{width: "35rem"}} onClick={() => handleClick(article_id)}>
                     <img src={article_img_url} className="card-img-top" alt={title} />
                     <div className="card-body py-3">
@@ -27,19 +27,8 @@ function ArticleCard({articles}){
                                 </div>
                             </div>
                         </div>
-                    <div className="card-footer py-2" style={{background: "none"}}> {dateFormatter(new Date(created_at))} {' • '} {author}</div>
+                    <div className="card-footer py-2" style={{background: "none"}}> <small className="text-body-secondary">{dateFormatter(new Date(created_at))} {' • '} {author}</small></div>
                     </div>
-
-                // <div className="article_cards" key={article_id} id={article_id} onClick={() => handleClick(article_id)}>
-                //     <img src={article_img_url} alt={title} />
-                //     <p>{formatDate(created_at)}</p>
-                //     <h3>{title}</h3>
-                //     <p>Written by {author}</p>
-                //     <div className="inline">
-                //     <p>👍 {votes} votes</p>
-                //     <p>💬 {comment_count} comments</p>
-                //     </div>
-                // </div>
             ))}
             </div>
     )

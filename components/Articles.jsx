@@ -17,7 +17,7 @@ function Articles(){
     let topicHeader = query ? query.replace(query[0], query[0].toUpperCase()) : null;
 
     return (<div className="article_container">
-        {query ? <h3 className="subheader mt-3" style={{fontWeight: "bold"}}>{topicHeader}</h3>: <h3 className="subheader mt-3" style={{fontWeight: "bold"}}>Top stories</h3>}
+        {query ? <h3 className="subheader mt-2" style={{fontWeight: "bold", fontSize:"30px", color: "grey"}}>{topicHeader}</h3>: <h3 className="subheader mt-3" style={{fontWeight: "bold"}}>Top stories</h3>}
         <ArticleCard articles={articles}/>
     </div>)
 }

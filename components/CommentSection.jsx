@@ -43,7 +43,7 @@ function CommentSection({ article_id }) {
                     <div class="card-body">
                         <p class="card-text"><small class="text-body-secondary">{author} {' • '} {dateFormatter(new Date(created_at))} </small></p>
                         <p class="card-text">{body}</p>
-                        {/* <a href="#" class="btn btn-primary">Button</a> */}
+
                     </div>
                 </div>
                 // <div className="comment_card" key={comment_id}>

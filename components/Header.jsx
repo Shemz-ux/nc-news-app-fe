@@ -13,7 +13,7 @@ function Header(){
     return (
         <div className="head p-3 mb-2">
           <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-         <h1 style={{fontWeight: "bold", fontSize: "40px"}} >NC News </h1>
+         <h1 style={{fontWeight: "bold", fontSize: "50px"}} >NC News </h1>
           </Link>
           <div className="topic_dropdown">
             <button className="dropbtn">Topics
