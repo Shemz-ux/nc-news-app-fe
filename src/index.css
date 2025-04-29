@@ -3,13 +3,15 @@
   color: white;
 } */
 
-/* #root {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+/* * {
+  background-color: #313232 !important;
+  color: white !important;
 } */
 
+h3.subheader {
+  color: #898989 !important;
+}
 main {
   margin: 1rem;
 }
@@ -19,7 +21,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 0.5px solid black;
+  border-bottom: 0.3px solid #878787;
 }
 
 header {
@@ -198,7 +200,7 @@ drop-down:hover {
   height: 1rem; 
   padding: 0.8rem;
   border: none;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
   border-radius: 0.5em;
   margin-bottom: 1rem;
   width: 100;
@@ -224,7 +226,7 @@ drop-down:hover {
 .comment input[type=submit] {
   width: 100%;
   background-color: lightgray;
-  color: black;
+  /* color: black; */
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -232,9 +234,9 @@ drop-down:hover {
   cursor: pointer;
 }
 
-.comment input[type=submit]:hover {
+/* .comment input[type=submit]:hover {
   background-color: rgb(181, 181, 181);
-}
+} */
 
 .comment_card button{
   width: 4rem;
