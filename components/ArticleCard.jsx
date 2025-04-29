@@ -17,7 +17,7 @@ function ArticleCard({articles}){
         <div className="card_container"> 
             {articles.map(({ article_id, title, article_img_url, author, comment_count, created_at}) => (
                 <div key={article_id} className="article_cards card my-3 mt-3" style={{width: "30rem", maxHeight: "50rem"}} onClick={() => handleClick(article_id)}>
-                    <img src={article_img_url} className="card-img-top" alt={title} />
+                    <img src={article_img_url} className="card-img-top" alt={title} style={{cursor: "pointer"}}/>
                     <div className="card-body">
                         <h3 className="card-title" style={{fontWeight: "bold"}}>{title}</h3>
                         <div className="mt-4 d-flex gap-3">

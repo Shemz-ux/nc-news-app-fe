@@ -31,18 +31,18 @@ function CommentSection({ article_id }) {
 
     return (
         <div className="d-flex flex-column align-items-center mt-5">
-            <h4 className="flex-end">Comments</h4>
-            <Comment/>
-            {comments.map(({ comment_id, author, body, created_at}) => (
-                <div class="comment_card card mb-3 mt-3" style={{width: "60%"}} key={comment_id}>
-                    <div class="card-body">
-                        <p class="card-text"><small class="text-body-secondary">{author} {' • '} {dateFormatter(new Date(created_at))} </small></p>
-                        <p class="card-text">{body}</p>
-                    {loggedInUser === author ? 
-                    <MdDelete size={25} className="delete-icon mt-3" style={{cursor: "pointer"}} onClick={(e) => handleSubmit(e, comment_id)}/>: null}
+                <Comment/>
+                {comments.map(({ comment_id, author, body, created_at}) => (
+                    <div class="comment_card card mb-3 mt-3" style={{width: "60%"}} key={comment_id}>
+                        <div class="card-body">
+                            <p class="card-text"><small class="text-body-secondary">{author} {' • '} {dateFormatter(new Date(created_at))} </small></p>
+                            <p class="card-text">{body}</p>
+                        {loggedInUser === author ? 
+                        <MdDelete size={25} className="delete-icon mt-3" style={{cursor: "pointer"}} onClick={(e) => handleSubmit(e, comment_id)}/>: null}
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+
         </div>
     );
 }

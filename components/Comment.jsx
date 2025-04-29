@@ -29,7 +29,8 @@ function Comment() {
     };
     
     return (
-        <div className="mt-2" style={{width: "60%"}}>
+        <div className="mt-1" style={{width: "60%"}}>
+            <h5 className="flex-end mb-3">Comments</h5>
             <form className="form-floating" onSubmit={handleSubmit} > 
                 <textarea className="form-control" name="body" placeholder="Leave a comment here" id="floatingTextarea2" 
                 value={commentBody} 
