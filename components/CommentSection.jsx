@@ -33,7 +33,7 @@ function CommentSection({ article_id }) {
         <div className="d-flex flex-column align-items-center mt-5">
                 <Comment/>
                 {comments.map(({ comment_id, author, body, created_at}) => (
-                    <div class="comment_card card mb-3 mt-3" style={{width: "60%"}} key={comment_id}>
+                    <div class="comment_card card mb-3 mt-3" style={{maxWidth: "55rem"}} key={comment_id}>
                         <div class="card-body">
                             <p class="card-text"><small class="text-body-secondary">{author} {' • '} {dateFormatter(new Date(created_at))} </small></p>
                             <p class="card-text">{body}</p>

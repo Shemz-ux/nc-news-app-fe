@@ -46,36 +46,13 @@ function ArticleItem(){
 
     return ( 
         <>
-        <div className="d-flex justify-content-center mt-4">
-            <div className="card mb-3" style={{ width: "60%" }}>
+        <div className="article-item d-flex justify-content-center mt-4">
+            <div className="card mb-3" style={{maxWidth: "55rem", maxHeight: "100rem"}} >
                 <img src={article_img_url} className="card-img-top" alt={title} />
                 <div className="card-body">
                 <h2 className="card-title mb-3" style={{ fontWeight: "bold" }}>{title}</h2>
                 <p className="card-text">{body}</p>
                 <Vote article_id={article_id}/>
-
-                {/* <div className="vote mt-0" style={{ display: 'flex', alignItems: 'center', gap: '5px', border: 'solid' }}>
-                    <BiUpvote
-                    size={30}
-                    onClick={() => handleVote(1)}
-                    style={{
-                        cursor: hasVoted === 1 ? 'not-allowed' : 'pointer',
-                        opacity: hasVoted === 1 ? 0.5 : 1,
-                    }}
-                    disabled={hasVoted === 1}
-                    />
-                    <span>{currentVotes + votes}</span>
-                    <BiDownvote
-                    size={30}
-                    onClick={() => handleVote(-1)}
-                    style={{
-                        cursor: hasVoted === -1 ? 'not-allowed' : 'pointer',
-                        opacity: hasVoted === -1 ? 0.5 : 1,
-                    }}
-                    disabled={hasVoted === -1}
-                    />
-                </div> */}
-
                 <p className="card-text">
                     <small className="text-body-secondary">
                     {dateFormatter(new Date(created_at))} {' • '} {author}
