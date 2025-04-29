@@ -42,7 +42,7 @@ export const postCommentByID = ({article_id, body, username}) => {
     username: username,
   }).then(({data})=>{
     console.log(data)
-    return data.comment
+    return data.newComment
   })
 }
 
