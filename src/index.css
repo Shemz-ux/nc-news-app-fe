@@ -224,6 +224,18 @@ drop-down:hover {
   padding: 20px;
 }
 
+.delete-icon {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, fill 0.2s ease;
+}
+
+.delete-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(145, 145, 145, 0.4);
+}
+
 .comment input[type=text], textarea{
   width: 100%;
   padding: 12px 20px;
