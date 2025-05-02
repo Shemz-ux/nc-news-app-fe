@@ -2,16 +2,21 @@ import ArticleCard from "./ArticleCard";
 import { fetcharticles } from "../src/api";
 import useApiRequests from "../hooks/apiRequests";
 import { useSearchParams } from "react-router";
+import { Spinner } from "react-bootstrap";
+import Loading from "./Loading";
 
 function Articles(){
     const [searchParams, setSearchParams] = useSearchParams();
     let query = searchParams.get('topic')
     const {data: articles, loading, error } = useApiRequests(fetcharticles, query)
 
-    if (loading) return <p>Loading stories...</p>
-
-    if (error) {
-        return <p>Could not load articles, please try again!</p>
+    if (loading) {
+      return (
+        <>
+          <Loading />
+          {error ? <p style={{ color: "red" }}>{error.statusMsg}</p> : null}
+        </>
+      );
     }
    
     let topicHeader = query ? query.replace(query[0], query[0].toUpperCase()) : null;

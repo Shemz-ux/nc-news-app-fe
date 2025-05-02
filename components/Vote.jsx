@@ -11,7 +11,7 @@ function Vote({article_id}){
 
     const {data: article} = useApiRequests(fetchArticleByID, article_id)
 
-    const {votes} = article
+    const votes = article?.votes ?? 0;
 
     const handleVote = (e, voted) => { 
         e.stopPropagation();

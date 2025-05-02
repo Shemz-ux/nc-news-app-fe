@@ -21,7 +21,7 @@ function Comment() {
                 body.value = ""; 
                 setCommentBody("")
                 setSubmitComment("Comment has been posted!");
-                setTimeout(() => location.reload(), 2000)
+                setTimeout(() => location.reload(), 0)
             })
             .catch(() => {
                 setSubmitComment("Could not post comment, please try again.");
@@ -29,7 +29,10 @@ function Comment() {
     };
     
     return (
-        <div className="mt-1" style={{width: "60%"}}>
+        <div className="mt-1 mx-auto" style={{width: "100%",
+            maxWidth: "60rem",
+            padding: "0 1rem",  
+            boxSizing: "border-box",}}>
             <h5 className="flex-end mb-3">Comments</h5>
             <form className="form-floating" onSubmit={handleSubmit} > 
                 <textarea className="form-control" name="body" placeholder="Leave a comment here" id="floatingTextarea2" 

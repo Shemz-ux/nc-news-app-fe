@@ -4,6 +4,7 @@ import { deleteComment, fetchCommentsByID } from "../src/api";
 import { useState } from "react";
 import Comment from "./Comment";
 import { MdDelete } from "react-icons/md";
+import Loading from "./Loading";
 
 function CommentSection({ article_id }) {
     const { data: comments, loading, error } = useApiRequests(fetchCommentsByID, article_id);
@@ -15,19 +16,18 @@ function CommentSection({ article_id }) {
     const handleSubmit = (e, comment_id) => {
         e.preventDefault();
 
-
         deleteComment(comment_id).then(()=>{setTimeout(() => location.reload(), 0)})
         .catch(()=>{
-            setDeleteMsg("A comment cannot be deleted twice!")
+            setDeleteMsg("Comment could not be clicked")
         })
 
         setDeleteMsg(null)
         setDeleteMsg("Comment has been successfully deleted!")
     };
 
-    if (loading) return <p>Loading comments section...</p>;
+    if (loading) return <Loading/>
 
-    if (error) return <p>Could not load comments.</p>;
+    if (error) return <p><small>Could not load comments.</small></p>;
 
     return (
         <div className="d-flex flex-column align-items-center mt-5">
